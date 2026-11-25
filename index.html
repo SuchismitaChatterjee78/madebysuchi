@@ -1002,8 +1002,8 @@ html[data-theme="dark"] .site-footer { background: #171717 !important; border-to
     const href=link.getAttribute('href')||'';
 
     const isContact=contactActive && href.endsWith('#contact');
-    const isAbout=!contactActive && path==='about.html' && href==='about.html#top';
-    const isHobby=!contactActive && path==='hobby.html' && href==='hobby.html#top';
+    const isAbout=!contactActive && (path==='about.html'||path==='about') && href==='about.html#top';
+    const isHobby=!contactActive && (path==='hobby.html'||path==='hobby') && href==='hobby.html#top';
 
     if(isAbout||isHobby||isContact){
       link.setAttribute('aria-current','page');
