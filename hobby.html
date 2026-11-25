@@ -192,7 +192,10 @@ html[data-theme="dark"] .site-footer { background: #171717 !important; border-to
 @media(max-width:420px){.topbar-inner{width:calc(100% - 28px);}}
 </style>
 <style id="torchlight-hobby-gallery">
-.photo-grid{position:relative;isolation:isolate;row-gap:30px!important}
+.photo-grid{
+  position:relative;
+  isolation:isolate;
+  gap:8px!important}
 .photo-grid figure{position:relative;z-index:0;overflow:visible!important;background:transparent!important;border-color:transparent!important;transition:border-color .35s ease,background .35s ease}
 .photo-grid img{filter:grayscale(0) brightness(1)!important;transform:scale(1);transition:filter .5s ease,transform .6s cubic-bezier(.2,.75,.25,1)!important}
 .photo-grid figcaption{position:absolute;top:calc(100% + 7px);left:0;z-index:3;width:max-content;max-width:min(260px,80vw);padding:8px 10px!important;background:#101010;color:#fff!important;font:12px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.07em;opacity:0;visibility:hidden;transform:translateY(-5px);transition:opacity .35s ease,transform .4s ease,visibility .35s ease}
@@ -203,6 +206,31 @@ html[data-theme="dark"] .site-footer { background: #171717 !important; border-to
 .photo-grid figure:hover figcaption{opacity:1;visibility:visible;transform:translateY(0)}
 @media(hover:none){.photo-grid figure:active img{filter:grayscale(0) brightness(1.08)!important}.photo-grid figure:active figcaption{opacity:1;visibility:visible;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.photo-grid img,.photo-grid figcaption{transition:none!important}}
+
+/* Responsive gallery: images only */
+@media (max-width: 768px){
+
+  .photo-grid:hover figure img,
+  .photo-grid figure:hover img,
+  .photo-grid figure:active img,
+  .photo-grid:hover figure:not(:hover) img{
+    filter:none!important;
+    transform:none!important;
+  }
+
+  .photo-grid:hover figure{
+    z-index:0!important;
+  }
+
+  /* .photo-grid figcaption{
+    display:none!important;
+  } */
+
+}
+
+.photo-grid figcaption{
+  display:none!important;
+}
 </style>
 <style>
 /* Ambient sound control */
@@ -398,7 +426,28 @@ html[data-theme="dark"] .site-footer { background: #171717 !important; border-to
 <style id="sticky-header-refinement">
 .topbar{position:sticky!important;top:0!important;z-index:1000!important;background:var(--bg)!important;}
 </style>
-</head><body id="top"><header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html">suchi<span style="color:#999">smita</span>.</a><div class="header-actions"><nav class="nav"><a href="index.html#work">Work</a><a href="about.html#top">About</a><a href="hobby.html#top">Hobby</a><a href="#contact">Contact</a></nav><button aria-label="Turn cinematic ambient music on" aria-pressed="false" class="sound-toggle" type="button"><span aria-hidden="true" class="sound-bars"><i></i><i></i><i></i><i></i></span><span class="sound-label">SOUND OFF</span></button><button aria-expanded="false" aria-label="Open navigation menu" class="mobile-menu-toggle" type="button"><span></span><span></span></button></div></div></header><section class="page-hero wrap"><div class="hobby-hero-copy"><span class="eyebrow">Off the clock</span><h1>A closer look at<br/><span style="color:#aaa">the little things.</span></h1><p>Butterflies, tiny visitors, and fleeting moments from the natural world. A little reminder to slow down and notice what’s around us.</p></div></section><main class="wrap" style="padding:56px 0 90px"><div class="photo-grid"><figure><img alt="Emerald swallowtail" loading="lazy" src="https://madebysuchi.pages.dev/photo-assets/butterfly-1.jpg"/><figcaption>01 / Emerald swallowtail</figcaption></figure>
+</head>
+<body id="top">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">suchi<span style="color:#999">smita</span>.</a>
+      <div class="header-actions"><nav class="nav">
+        <a href="index.html#work">Work</a>
+        <a href="about.html#top">About</a>
+        <a href="hobby.html#top">Hobby</a>
+        <a href="#contact">Contact</a></nav>
+        <button aria-label="Turn cinematic ambient music on" aria-pressed="false" class="sound-toggle" type="button"><span aria-hidden="true" class="sound-bars"><i></i><i></i><i></i><i></i></span><span class="sound-label">SOUND OFF</span></button><button aria-expanded="false" aria-label="Open navigation menu" class="mobile-menu-toggle" type="button"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <section class="page-hero wrap">
+    <div class="hobby-hero-copy"><span class="eyebrow">Off the clock</span>
+      <h1>A closer look at<br/><span style="color:#aaa">the little things.</span></h1>
+      <p>Butterflies, tiny visitors, and fleeting moments from the natural world. A little reminder to slow down and notice what’s around us.</p>
+    </div>
+  </section>
+  <main class="wrap" style="padding:56px 0 90px"><div class="photo-grid">
+<figure><img alt="Emerald swallowtail" loading="lazy" src="https://madebysuchi.pages.dev/photo-assets/butterfly-1.jpg"/><figcaption>01 / Emerald swallowtail</figcaption></figure>
 <figure><img alt="Black swallowtail on a red flower" loading="lazy" src="https://madebysuchi.pages.dev/photo-assets/butterfly-2.jpg"/><figcaption>02 / Black swallowtail on a red flower</figcaption></figure>
 <figure><img alt="Patterned butterfly on sand" loading="lazy" src="https://madebysuchi.pages.dev/photo-assets/butterfly-3.jpg"/><figcaption>03 / Patterned butterfly on sand</figcaption></figure>
 <figure><img alt="Brown butterfly on a leaf" loading="lazy" src="https://madebysuchi.pages.dev/photo-assets/butterfly-4.jpg"/><figcaption>04 / Brown butterfly on a leaf</figcaption></figure>
